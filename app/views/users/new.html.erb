@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registrations</title>
+</head>
+<body>
+	<header>
+		<nav class="nav nav-pills nav-fill">
+			<a class="nav-item nav-link" href="/">Home</a>
+			<% if logged_in? %>
+				<%= link_to "LOG OUT", "/logout", method: :delete, class: 'nav-link nav-item' %>
+			<% else %>
+				<a class="nav-item nav-link active" href="/new">Registrations</a>
+				<%= link_to "Log in", "/login", class: 'nav-link nav-item' %>
+			<% end %>
+		</nav>
+	</header>
+
+	<div class="jumbotron">
+		<h1>Register right below</h1>
+
+		<form action="/new" method="post">
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+			<label>First name</label>
+			<input type="text" name="first_name" class="form-control">
+
+			<label>Last name</label>
+			<input type="text" name="last_name" class="form-control">
+
+			<label>Email: </label>
+			<input type="text" name="email" class="form-control">
+
+			<br>
+			<input type="submit" name="Envoyer" value="Submit" class="btn btn-lg btn-success">
+		</form>
+	</div>
+</body>
+</html>

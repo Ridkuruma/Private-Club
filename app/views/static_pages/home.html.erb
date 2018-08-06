@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+	<header>
+		<nav class="nav nav-pills nav-fill">
+			<a class="nav-item nav-link active" href="/">Home</a>
+			<% if logged_in? %>
+				<%= link_to "LOG OUT", "/logout", method: :delete, class: 'nav-link nav-item' %>
+			<% else %>
+				<a class="nav-item nav-link" href="/new">Registrations</a>
+				<%= link_to "Log in", "/login", class: 'nav-link nav-item' %>
+			<% end %>
+		</nav>
+	</header>
+	
+	<div class="jumbotron">
+		<h1>Welcome</h1>
+
+		<% if logged_in? %>
+			<a href="/page-club" class="btn btn-lg btn-primary">Club members access only</a>
+		<% else %>
+			<br><br>
+			<h2>Not connected ?</h2>
+			<a href="/new" class="btn btn-lg btn-primary">Register</a>
+			<a href="/login" class="btn btn-lg btn-primary">Log in</a>
+		<% end %>
+	</div>
+
+<!-- 	<% @tab_user.each do |user| %>
+	<ul>
+		<li>
+			<%= user.first_name+ ' ' +user.last_name %>
+		</li>
+	</ul>
+
+	<% end %>
+ -->
+
+</body>
+</html>

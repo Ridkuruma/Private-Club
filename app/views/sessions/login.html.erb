@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log in</title>
+</head>
+<body>
+	<header>
+		<nav class="nav nav-pills nav-fill">
+			<a class="nav-item nav-link" href="/">Home</a>
+			<% if logged_in? %>
+				<%= link_to "Log out", "/logout", method: :delete, class: 'nav-link nav-item' %>
+			<% else %>
+				<a class="nav-item nav-link" href="/new">Registrations</a>
+				<%= link_to "Log in", "/login", class: 'nav-link active nav-item' %>
+			<% end %>
+		</nav>
+	</header>
+
+	<div class="jumbotron">
+		<h1>Connect below</h1>
+
+		<%= form_for(:session, url: "/login") do |f| %>
+			<%= f.label :email %>
+			<%= f.email_field :email, class: 'form-control' %>
+
+			<%= f.label :Password %>
+			<%= f.password_field :secret_pass, class: 'form-control' %>
+<!-- password_field -->
+			<br>
+			<%= f.submit "Log in", class: "btn btn-primary" %>
+	    <% end %>
+
+	</div>
+</body>
+</html>
