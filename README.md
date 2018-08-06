@@ -1,24 +1,11 @@
-# README
+## Ruby on Rails version
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby '2.5.1'
 
-Things you may want to cover:
+Rails '5.2.0'
 
-* Ruby version
 
-* System dependencies
+## Heroku : https://private-clubmed.herokuapp.com/
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Louis Delestre / Jeremie De Gueltzl / Ridwan Baboolall
